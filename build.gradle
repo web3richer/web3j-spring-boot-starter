@@ -1,0 +1,46 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.2.2'
+	id 'io.spring.dependency-management' version '1.1.4'
+}
+
+group = 'org.web3j'
+version = '4.11.0'
+
+java {
+	sourceCompatibility = '17'
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation (libs.spring.boot.starter.web)
+	implementation (libs.spring.boot.starter.actuator)
+	implementation (libs.spring.boot.configuration.processor)
+
+	implementation (libs.web3j.core) {
+		exclude group: 'tech.pegasys'
+	}
+
+	implementation (libs.bcprov.jdk18on)
+	implementation(libs.json.path)
+
+	compileOnly(libs.lombok)
+	developmentOnly(libs.spring.boot.devtools)
+	annotationProcessor(libs.lombok)
+
+	testImplementation (libs.spring.boot.starter.test)
+
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

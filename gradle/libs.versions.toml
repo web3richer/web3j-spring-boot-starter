@@ -1,0 +1,21 @@
+[versions]
+spring = "3.2.2"
+web3j = "4.11.0"
+bcprov = "1.77"
+json-path = "2.9.0"
+lombok = "1.18.30"
+
+[libraries]
+spring-boot-starter-web = { module = "org.springframework.boot:spring-boot-starter-web", version.ref = "spring"}
+spring-boot-starter-actuator = { module = "org.springframework.boot:spring-boot-starter-actuator", version.ref = "spring"}
+spring-boot-configuration-processor = { module = "org.springframework.boot:spring-boot-configuration-processor", version.ref = "spring"}
+spring-boot-starter-test = { module = "org.springframework.boot:spring-boot-starter-test", version.ref = "spring"}
+spring-boot-devtools = { module = "org.springframework.boot:spring-boot-devtools", version.ref = "spring"}
+
+web3j-core = { module = "org.web3j:core", version.ref = "web3j"}
+
+lombok = { module = "org.projectlombok:lombok", version.ref = "lombok"}
+
+bcprov-jdk18on = { module = "org.bouncycastle:bcprov-jdk18on", version.ref = "bcprov"}
+
+json-path ={ module = "com.jayway.jsonpath:json-path", version.ref = "json-path"}
